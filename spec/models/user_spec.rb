@@ -37,7 +37,7 @@ describe User do
   end
 
   describe "password do not match" do
-    before {@user.password_confirmation = "culo"}
+    before {@user.password_confirmation = "culatte"}
     it {should_not be_valid}
   end
 

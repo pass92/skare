@@ -17,7 +17,7 @@
           </li>
 	  <li class="divider-vertical"></li>
           <li class="">
-            <a href="./customize.html">Sign In</a>
+            <%= link_to '<b>Sign In</b>'.html_safe, controller: :users, action: :authenticate, email: "alex.pellegrini@live.com", password: "mammamia" %>
           </li>
         </ul>
       </div>
