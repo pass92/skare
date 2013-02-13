@@ -1,0 +1,23 @@
+*{
+    margin : 0 auto;
+}
+
+div.left-bar{
+    width: 300px;
+    float: left;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top : 40px
+}
+
+a{
+    color: #08C;
+}
+
+a:hover{
+    text-decoration : underline;
+}
+
+div.wrapper{
+    width : 700px;
+}
