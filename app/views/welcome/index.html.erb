@@ -6,14 +6,14 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="brand" href="./index.html"><b>Welcome!</b></a>
+      <a class="brand" href="#"><b>Welcome!</b></a>
       <div class="nav-collapse collapse">
         <ul class="nav pull-right">
           <li class="">
-            <a href="./index.html">Get Started</a>
+            <a href="#">Get Started</a>
           </li>
           <li class="">
-            <a href=""><b>Sign Up</b></a>
+            <a href="#"><b>Sign Up</b></a>
           </li>
 	  <li class="divider-vertical"></li>
           <li class="dropdown">
@@ -41,10 +41,22 @@
 <br />
 <br />
 <div class="wrapper">
-  <div class="caption">
-    <h2>My first Ruby on Rails App</h2>
+  <div class="caption" style="width:64%; float:left; margin:5px">
+    <h2>My first Rails App</h2>
     <p>
        Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     </p>
+  </div>
+  <div class="caption" style="width:31%; float: left; margin:3px">
+    <br />
+    <%= simple_form_for :new_user, url: {controller: :users, action: :create} do |f|%>
+    <%= f.input :username, label: false, placeholder: 'Your Name' %>
+    <%= f.input :email, label: false, placeholder: 'Your E-mail' %>
+    <%= f.input :password, label: false, placeholder: 'Password' %>
+    <%= f.input :password_confirmation, label: false, placeholder: 'Confirm Password' %>
+    <center>
+      <%= f.button :submit, 'Sign Up Now', class: 'btn btn-info btn-large btn-block' %>
+    </center>
+    <% end %>
   </div>
 </div>

@@ -19,4 +19,13 @@ class UsersController < ApplicationController
     @user = User.find(session[:user_id])
   end
 
+  def create
+    @user = User.new(params[:new_user])
+    if @user.save
+      redirect_to controller: :welcome, :action => :index 
+    else
+      redirect_to controller: :welcome, :action => :index
+    end
+  end
+
 end
