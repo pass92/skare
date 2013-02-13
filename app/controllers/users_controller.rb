@@ -24,6 +24,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to controller: :welcome, :action => :index 
     else
+      session[:error] = true
       redirect_to controller: :welcome, :action => :index
     end
   end
