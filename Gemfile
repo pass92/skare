@@ -8,7 +8,7 @@ gem 'rails', '3.2.9'
   gem 'rspec-rails', '2.11.0'
   gem 'annotate', '2.5.0'	
   gem 'bcrypt-ruby', '3.0.1'
-
+  gem 'simple_form'
 
 # Gems used only for assets and not required
 # in production environments by default.

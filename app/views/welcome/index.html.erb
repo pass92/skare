@@ -13,12 +13,24 @@
             <a href="./index.html">Get Started</a>
           </li>
           <li class="">
-            <a href="./javascript.html">Sign Up</a>
+            <a href=""><b>Sign Up</b></a>
           </li>
 	  <li class="divider-vertical"></li>
-          <li class="">
-            <%= link_to '<b>Sign In</b>'.html_safe, controller: :users, action: :authenticate, email: "alex.pellegrini@live.com", password: "mammamia" %>
-          </li>
+          <li class="dropdown">
+	    <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+	      <b>Sign In</b>
+	      <strong class="caret"></strong>
+	    </a>
+	    <div class="dropdown-menu" style="padding:15px; padding-bottom:0px">
+	      <%= simple_form_for :auth_user, url: {controller: :users, action: :authenticate} do |f| %>
+	      <%= f.input :email, label: false, placeholder: "Your Email" %>
+	      <%= f.input :password, label: false, placeholder: "Password" %>
+	      <center>
+		<%= f.button :submit, '     Sign In     ', class: 'btn btn-info btn-default' %>
+	      </center>
+	      <% end %>
+	    </div>
+	  </li>
         </ul>
       </div>
     </div>
