@@ -1,16 +1,12 @@
 class UsersController < ApplicationController
 
   def authenticate
-    current_user = params[:auth_user]
-    @user = User.find_by_email(current_user[:email])
-    if !@user.nil?
-      if @user.authenticate(current_user[:password])
-        session[:user_id] = @user.id
-        redirect_to action: :show
-      else
-        redirect_to controller: :welcome, :action => :index
-      end
+    @user = User.find_by_email(params[:auth_user][:email])
+    if @user && @user.authenticate(params[:auth_user][:password])
+      session[:user_id] = @user.id
+      redirect_to action: :show
     else
+      session[:signin_error] = true
       redirect_to controller: :welcome, :action => :index
     end
   end
@@ -22,12 +18,11 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:new_user])
     if @user.save
-      session[:error] = false
+      session[:signup_error] = false
       redirect_to controller: :welcome, :action => :index 
     else
-      session[:error] = true
+      session[:signup_error] = true
       redirect_to controller: :welcome, :action => :index
     end
   end
-
 end
