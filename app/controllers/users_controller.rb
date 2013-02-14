@@ -3,7 +3,8 @@ class UsersController < ApplicationController
   def authenticate
     @user = User.find_by_email(params[:auth_user][:email])
     if @user && @user.authenticate(params[:auth_user][:password])
-      session[:user_id] = @user.id
+      sign_in @user
+      #session[:user_id] = @user.id
       redirect_to action: :show
     else
       session[:signin_error] = true
