@@ -59,12 +59,25 @@
     </center>
     <% end %>
   </div>
-  <% if @error %>
+
+  <% flash.each do |key, value| %>
+  <div class="alert alert-<%= key %>">
+    <center>
+      <h3>
+	<strong><%= value %></strong>
+      </h3>
+    </center>
+  </div>
+  <% end %>
+
+  <!--<% if @error %>
   <div class="alert alert-error">
     <center>
       <h3><strong>Something went wrong with your signup procedure</strong></h3>
       <strong>Retry signing up with all the informations required and matching passwords</strong>
     </center>
   </div>
-  <% end %>
+  <% end %>-->
+
+
 </div>

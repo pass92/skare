@@ -22,6 +22,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:new_user])
     if @user.save
+      session[:error] = false
       redirect_to controller: :welcome, :action => :index 
     else
       session[:error] = true
