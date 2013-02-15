@@ -5,22 +5,4 @@ module UsersHelper
     gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}"
     image_tag(gravatar_url, alt: user.username, class: 'img-rounded', style: 'width:100px; heigth:100px')
   end
-
-  def sign_in(user)
-    cookies.permanent[:remember_token] = user.remember_token
-    self.current_user = user
-  end
-
-  def current_user=(user)
-    @current_user = user
-  end
-
-  def current_user
-    @current_user ||= User.find_by_remember_token(cookies[:remember_token])
-  end
-
-  def sign_out
-    cookies.delete :remember_token, :domain => 'localhost'
-  end
-
 end

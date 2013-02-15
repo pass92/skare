@@ -22,7 +22,7 @@
 	      <strong class="caret"></strong>
 	    </a>
 	    <div class="dropdown-menu" style="padding:15px; padding-bottom:0px">
-	      <%= simple_form_for :auth_user, url: {controller: :users, action: :authenticate} do |f| %>
+	      <%= simple_form_for :session, url: {controller: :sessions, action: :create} do |f| %>
 	      <%= f.input :email, label: false, placeholder: "Your Email" %>
 	      <%= f.input :password, label: false, placeholder: "Password" %>
 	      <center>

@@ -1,8 +1,8 @@
 Skare::Application.routes.draw do
-  post "user/auth" => "users#authenticate"
-  post "user/create" => "users#create"
-  get "user/show" => "users#show"
+  post "users/create" => "users#create"
+  resources :sessions, only: [:new, :create, :destroy]
   get "welcome" => "welcome#index"
-  get "welcome" => "users#logout"
+  get "sessions/destroy" => "sessions#destroy"
+  get "user" => "users#show"
   root :to => "users#show"
 end
