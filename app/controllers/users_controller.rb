@@ -4,7 +4,6 @@ class UsersController < ApplicationController
     @user = User.find_by_email(params[:auth_user][:email])
     if @user && @user.authenticate(params[:auth_user][:password])
       sign_in @user
-      session[:user_id] = @user.id
       redirect_to action: :show
     else
       session[:signin_error] = true
@@ -13,7 +12,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(session[:user_id])
+    @user = User.find_by_remember_token(cookies[:remember_token])
+    redirect_to controller: :welcome, action: :index if @user.nil?
   end
 
   def create
@@ -25,5 +25,10 @@ class UsersController < ApplicationController
       session[:signup_error] = true
       redirect_to controller: :welcome, :action => :index
     end
+  end
+
+  def logout
+    cookies.delete :remember_token 
+    redirect_to action: :show
   end
 end
