@@ -15,4 +15,12 @@ class UsersController < ApplicationController
       redirect_to controller: :welcome, :action => :index
     end
   end
+
+  def destroy
+    @user = current_user
+    @user.destroy
+    sign_out
+    redirect_to controller: :welcome, action: :index
+  end
+
 end

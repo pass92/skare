@@ -7,7 +7,6 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
 <div class="navbar navbar-inverse navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
@@ -26,20 +25,37 @@
             <a href="">Author</a>
           </li>
 	  <li class="divider-vertical"></li>
-          <li class="">
-            <%= link_to 'Sign Out', controller: :sessions, action: :destroy %>
-          </li>
+	  <li class="dropdown">
+	    <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+	      <b>Account </b>
+	      <strong class="caret"></strong>
+	    </a>
+	    <ul class="dropdown-menu">
+	      <li>
+		<%= link_to 'Sign Out', controller: :sessions, action: :destroy %>
+	      </li>
+	      <li class="divider"></li>
+	      <li>
+		<%= link_to 'Drop Account', controller: :users, action: :destroy %>
+	      </li>
+	    </ul>
+	  </li>	  
         </ul>
       </div>
     </div>
   </div>
 </div>
-
+  
 <br />
 <br />
 <br />
 <%= yield %>
 
-
+<div style="clear:both"></div>
+<div class="page-header" style="margin-top: 70px">
+</div>
+<center>
+  <h4><small>Developed with <a href="http://rubyonrails.org/">Ruby on Rails</a>, <a href="http://twitter.github.com/bootstrap/">Twitter-Bootstrap</a> CSS Framework</small></h4>
 </body>
+</center>
 </html>
