@@ -1,3 +1,4 @@
+<% provide(:page, "welcome") %>
 <div class="navbar navbar-inverse navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
@@ -40,7 +41,7 @@
 <br />
 <br />
 <br />
-<div class="wrapper">
+<div class="wrapper" style="margin: 0 auto; float: center">
   <div class="caption" style="width:64%; float:left; margin:5px">
     <h2>My first Rails App</h2>
     <p>
@@ -55,7 +56,7 @@
     <%= f.input :password, label: false, placeholder: 'Password' %>
     <%= f.input :password_confirmation, label: false, placeholder: 'Confirm Password' %>
     <center>
-      <%= f.button :submit, 'Sign Up Now', class: 'btn btn-info btn-large btn-block' %>
+      <button class="btn btn-large btn-block btn-info"><i class="icon-pencil icon-white"></i>&nbsp;&nbsp;<b>Sign Up Now</b></button>      
     </center>
     <% end %>
   </div>

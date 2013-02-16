@@ -1,5 +1,4 @@
 *{
-    margin : 0 auto;
 }
 
 div.left-bar{
@@ -7,7 +6,7 @@ div.left-bar{
     float: left;
     margin-right: 20px;
     margin-left: 20px;
-    margin-top : 40px
+    margin-top : 20px
 }
 
 a{
@@ -20,4 +19,5 @@ a:hover{
 
 div.wrapper{
     width : 700px;
+    float: left;
 }

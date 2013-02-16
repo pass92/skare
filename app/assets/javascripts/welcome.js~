@@ -1,0 +1,5 @@
+
+
+$(document).ready(function(){
+	$('div.alert').fadeOut(4000);
+});
