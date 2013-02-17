@@ -19,7 +19,7 @@
       <div class="nav-collapse collapse">
         <ul class="nav pull-right">
           <li class="">
-            <a href="">GitHub</a>
+            <a href="https://github.com/"><b>GitHub</b></a>
           </li>
           <li class="">
             <a href="">Author</a>
@@ -58,16 +58,14 @@
 	<% else %>
       <li>
 	<% end %>
-	<a>
-	  <center><i class="icon-home"></i>&nbsp;&nbsp;<b>Home</b></center>
-	</a>
+	  <%= link_to '<center><i class="icon-home"></i>&nbsp;&nbsp;<b>Home</b></center>'.html_safe, controller: :users, action: :show %>
       </li>
       <% if yield(:page) == 'commissions' %>
       <li class="active">
 	<% else %>
       <li>
 	<% end %>
-	<%= link_to '<center><i class="icon-book"></i>&nbsp;&nbsp;<b>Commissions</b></center>'.html_safe%>
+	<%= link_to '<center><i class="icon-book"></i>&nbsp;&nbsp;<b>Commissions</b></center>'.html_safe, controller: :posts, action: :index %>
       </li>
     </ul>
   </div>

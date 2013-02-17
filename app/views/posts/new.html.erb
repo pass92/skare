@@ -1,0 +1,11 @@
+<% provide(:page, "commissions") %>
+<% provide(:username, @user.username) %>
+<div class="wrapper">
+  <center><h2 style="color : #08C">New Post</h2></center>
+  <br />
+  <center><%= simple_form_for :post, url: {action: :create} do |f| %>
+    <%= f.input :title, label: false, placeholder: "Post Title" %>
+    <%= f.input :body, as: :text, label: false, placeholder: "Type in the post's content..." , input_html: {cols: 30, rows:5}%>
+    <button type="submit" class="btn btn-primary btn-default"><b>Save Post</b></button>
+    <% end %></center>
+</div>

@@ -1,0 +1,19 @@
+<% provide(:username, @user.username) %>
+<% provide(:page, "commissions") %>
+
+<div class="wrapper">
+<h4><%= link_to 'Post Something New', controller: :posts, action: :new %></h4>
+
+
+<br />
+<ul>
+  <% @posts.each do |post| %>
+  <li>
+    <div class="capation" style="width : 300px">
+      <h3><%= post.title %></h3>
+      <p><%= post.body %></p>
+    </div>
+  </li>
+  <% end %>
+</ul>
+</div>

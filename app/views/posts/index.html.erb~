@@ -1,0 +1,13 @@
+<% provide(:username, @user.username) %>
+<% provide(:page, "commissions") %>
+
+<ul>
+  <% @posts.each do |post| %>
+  <li>
+    <div class="capation">
+      <h2><%= post.title %></h2>
+      <p><%= post.body %></p>
+    </div>
+  </li>
+  <% end %>
+</ul>

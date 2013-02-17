@@ -3,6 +3,6 @@
 $(document).ready(function(){
     $('#img-chg').hide();
     $('img').click(function(){
-	$('#img-chg').fadeToggle(0);
+	$('#img-chg').fadeToggle('slow');
     });
 });

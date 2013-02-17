@@ -4,7 +4,7 @@
     <h2><span><%= gravatar_for(@user) %></span>
       &nbsp;&nbsp;&nbsp;<%= @user.username.capitalize %>
     </h2>
-    <span id="img-chg">
-      <p>change image on <a href="https://it.gravatar.com/">Gravatar</a></p>
-    </span>
+    <div class="caption" id="img-chg" style="background-color:#E5E5E5;width:200px; padding: 5px; border-radius:5px">
+      <p id="img-hint">You can change your image by using this e-mail address on <a href="https://it.gravatar.com/">Gravatar</a> and upload a new photo there</p>
+    </div>
 </div>
