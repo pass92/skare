@@ -27,7 +27,7 @@
 	  <li class="divider-vertical"></li>
 	  <li class="dropdown">
 	    <a class="dropdown-toggle" href="#" data-toggle="dropdown">
-	      <b>Account </b><i class="icon-cog icon-white"></i>
+	      <b>Account </b><i class="icon-cog icon-white" style="width:2px"></i>
 	    </a>
 	    <ul class="dropdown-menu">
 	      <li>
@@ -48,34 +48,7 @@
 <br />
 <br />
 <br />
-
-<% if yield(:page) != 'welcome' %>
-<div class="left-bar">
-  <div class="caption">
-    <ul class="nav nav-pills nav-stacked">
-      <% if yield(:page) == 'home' %>
-      <li class="active">
-	<% else %>
-      <li>
-	<% end %>
-	<a>
-	  <center><i class="icon-home"></i>&nbsp;&nbsp;<b>Home</b></center>
-	</a>
-      </li>
-      <% if yield(:page) == 'commissions' %>
-      <li class="active">
-	<% else %>
-      <li>
-	<% end %>
-	<%= link_to '<center><i class="icon-book"></i>&nbsp;&nbsp;<b>Commissions</b></center>'.html_safe%>
-      </li>
-    </ul>
-  </div>
-</div>
-<% end %>
-<!-- YIELD !!! -->
 <%= yield %>
-<!-- YIELD !!! -->
 
 <div style="clear:both"></div>
 <div class="page-header" style="margin-top: 70px">

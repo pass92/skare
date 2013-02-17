@@ -1,0 +1,8 @@
+
+
+$(document).ready(function(){
+    $('#img-exp').hide();
+    $('img').hover(function(){
+	$('#img-exp').toggle('slow');
+    });
+});

@@ -1,7 +1,10 @@
 <% provide(:username, @user.username) %>
 <% provide(:page, "home") %>
 <div class="wrapper">
-  <div class="hero-unit">
-    <h1><%= gravatar_for(@user) %> <%= @user.username.capitalize %></h1>
-  </div>
+    <h2><span><%= gravatar_for(@user) %></span>
+      &nbsp;&nbsp;&nbsp;<%= @user.username.capitalize %>
+    </h2>
+    <span id="img-chg">
+      <p>change image on <a href="https://it.gravatar.com/">Gravatar</a></p>
+    </span>
 </div>

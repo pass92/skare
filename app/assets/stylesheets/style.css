@@ -21,3 +21,14 @@ div.wrapper{
     width : 700px;
     float: left;
 }
+
+img{
+    margin-bottom: 0px;
+}
+
+
+p{
+    font-size : 9px;
+    margin-top : 0px;
+    margin-bottom : 0px;
+}
