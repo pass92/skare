@@ -51,7 +51,6 @@
 
 <% if yield(:page) != 'welcome' %>
 <div class="left-bar">
-  <div class="caption">
     <ul class="nav nav-pills nav-stacked">
       <% if yield(:page) == 'home' %>
       <li class="active">
@@ -65,10 +64,10 @@
 	<% else %>
       <li>
 	<% end %>
-	<%= link_to '<center><i class="icon-book"></i>&nbsp;&nbsp;<b>Commissions</b></center>'.html_safe, controller: :posts, action: :index %>
+	<%= link_to '<center><i class="icon-list
+"></i>&nbsp;&nbsp;<b>Commissions</b></center>'.html_safe, controller: :posts, action: :index %>
       </li>
     </ul>
-  </div>
 </div>
 <% end %>
 <!-- YIELD !!! -->

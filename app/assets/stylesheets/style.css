@@ -26,6 +26,11 @@ img{
     margin-bottom: 0px;
 }
 
+.cap-post{
+    padding: 3px;
+    border-radius : 5px;
+}
+
 
 #img-hint{
     font-size : 9px;

@@ -1,0 +1,10 @@
+<% provide(:username, current_user.username) %>
+<% provide(:page, "commissions") %>
+
+
+<div class="wrapper">
+  <div class="page-header">
+    <h2><%= @post.title %></h2>
+    <p><%= @post.body %></p>
+  </div>
+</div>

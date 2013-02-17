@@ -9,11 +9,21 @@
 <ul>
   <% @posts.each do |post| %>
   <li>
-    <div class="capation" style="width : 300px">
+    <div class="caption cap-post" style="width : 400px; height: 130px">
       <h3><%= post.title %></h3>
-      <p><%= post.body %></p>
+      <p><%= post.body[0..100] %><% if post.body.length>100 %> ... <% longer=true %><% end %></p>
+      <p class="options">
+	<i class="icon-remove"></i>&nbsp;<%= link_to 'Drop', controller: :posts, action: :drop, post_id: post.id %>
+	&nbsp;&nbsp;&nbsp;
+	<i class="icon-edit"></i>&nbsp;<a>Edit</a>
+	<% if longer %>
+	&nbsp;&nbsp;&nbsp;
+	<i class="icon-book"></i>&nbsp;<%= link_to 'Read More', action: :show, post_id: post.id %>
+	<% end %>
+      </p>
     </div>
   </li>
+  <div class="page-header"></div>
   <% end %>
 </ul>
 </div>
