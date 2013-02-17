@@ -27,7 +27,7 @@
 	      <%= f.input :email, label: false, placeholder: "Your Email" %>
 	      <%= f.input :password, label: false, placeholder: "Password" %>
 	      <center>
-		<%= f.button :submit, '     Sign In     ', class: 'btn btn-info btn-default' %>
+		<button class="btn btn-info btn-default">&nbsp;<b><i class="icon-check icon-white"></i>&nbsp; Sign In &nbsp;&nbsp;</b></button>
 	      </center>
 	      <% end %>
 	    </div>
@@ -68,6 +68,13 @@
 	<strong><%= value %></strong>
       </h3>
     </center>
+    <% if @signup %>
+    <ul>
+      <% @signup_error.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+    <% end %>
   </div>
   <% end %>
 

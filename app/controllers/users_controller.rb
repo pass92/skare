@@ -8,10 +8,11 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:new_user])
     if @user.save
-      session[:signup_error] = false
+      session[:signup] = false
       redirect_to controller: :welcome, :action => :index 
     else
-      session[:signup_error] = true
+      session[:signup] = true
+      session[:signup_error] = @user.errors.full_messages
       redirect_to controller: :welcome, :action => :index
     end
   end

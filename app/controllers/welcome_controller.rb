@@ -1,17 +1,14 @@
 class WelcomeController < ApplicationController
   def index
-    signup_error = session[:signup_error]
-    signin_error = session[:signin_error]
-    if signup_error == true
-      flash.now[:error] = "Something wrong with your signup procedure"
-    elsif signup_error == false
-      flash.now[:success] = "User successfully created you can now log in"
-    elsif signin_error == true
-      flash.now[:error] = "Invalid username or password, retry login !"
-    else
-      flash = nil
-    end
-    session[:signup_error] = session[:signin_error] = nil
+    @signup = session[:signup]
+    @signin = session[:signin]
+    @signup_error = session[:signup_error] if @signup
+    @signin_error = session[:signin_error] if @signin
+    flash.now[:error] = "Something went wrong with your signup procedure" if session[:signup]
+    flash.now[:success] = "User successfully created you can now log in" if !session[:signup] && !session[:signup].nil?
+    flash.now[:error] = "Invalid username or password, retry login !" if session[:signin]
+    flash = nil
+    session[:signup] = session[:signin] = nil
   end
   
   

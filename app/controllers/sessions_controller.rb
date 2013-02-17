@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       sign_in user
       redirect_to controller: :users, action: :show
     else
-      session[:signin_error] = true
+      session[:signin] = true
       redirect_to controller: :welcome, :action => :index
     end
   end
