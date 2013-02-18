@@ -15,7 +15,7 @@
       <p class="options">
 	<i class="icon-remove"></i>&nbsp;<%= link_to 'Drop', controller: :posts, action: :drop, post_id: post.id %>
 	&nbsp;&nbsp;&nbsp;
-	<i class="icon-edit"></i>&nbsp;<a>Edit</a>
+	<i class="icon-edit"></i>&nbsp;<%= link_to 'Edit', action: :edit, post_id: post.id %>
 	<% if longer %>
 	&nbsp;&nbsp;&nbsp;
 	<i class="icon-book"></i>&nbsp;<%= link_to 'Read More', action: :show, post_id: post.id %>

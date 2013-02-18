@@ -1,0 +1,8 @@
+<% provide(:username, @user.username) %>
+<% provide(:page, "home") %>
+<div class="wrapper">
+  <div class="hero-unit">
+    <h1><%= gravatar_for(@user) %><%= @user.username.capitalize %></h1>
+    <div id="img-exp"><a style="font-size:10px">change your image at Gravatar using this email addres</a></div>
+  </div>
+</div>

@@ -12,6 +12,8 @@ Skare::Application.routes.draw do
   get "posts" => "posts#index"
   get "posts/drop" => "posts#drop"
   get "posts/show" => "posts#show"
+  get "posts/edit" => "posts#edit"
+  post "posts/update" => "posts#update"
   
   root :to => "users#show"
 end

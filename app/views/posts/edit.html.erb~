@@ -1,0 +1,12 @@
+<% provide(:username, current_user.username) %>
+<% provide(:page, "commissions") %>
+
+<div class="wrapper">
+  <center>
+    <%= simple_form_for :edited, controller: :posts, action: :edit, do |f| %>
+    <%= f.input :title, label: false, input_html: {value: @post.title} %>
+    <%= f.input :body, label: false, input_html: {value: @post.body} %>
+    <button type="submit" class="btn btn-default btn-primary">&nbsp;<i class="icon--edit icon-white"></i>&nbps;Save Changes&nbps;&nbps;</button>
+    <% end %>
+  </center>
+</div>

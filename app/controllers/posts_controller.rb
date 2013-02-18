@@ -5,6 +5,19 @@ class PostsController < ApplicationController
     @posts = @user.posts.all
   end
 
+  def edit
+    @post = current_user.posts.find(params[:post_id])
+  end
+
+  def update
+    @post = current_user.posts.find(params[:post_id])
+    if @post.update_attributes(:title => params[:edited][:title], :body => params[:edited][:body])
+      redirect_to action: :index
+    else
+      redirect_to controller: :users, action: :show
+    end
+  end
+
   def drop
     @post = Post.find(params[:post_id])
     @post.destroy
