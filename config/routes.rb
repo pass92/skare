@@ -5,6 +5,7 @@ Skare::Application.routes.draw do
   get "sessions/destroy" => "sessions#destroy"
   get "user" => "users#show"
   get "user/destroy" => "users#destroy"
+  get "users" => "users#index"
   
   #posts routes
   post "post/create" => "posts#create"
