@@ -7,7 +7,6 @@ Skare::Application.routes.draw do
   get "user/destroy" => "users#destroy"
   
   #posts routes
-  get "posts/new" => "posts#new"
   post "post/create" => "posts#create"
   get "posts" => "posts#index"
   get "posts/drop" => "posts#drop"

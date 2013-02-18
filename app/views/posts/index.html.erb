@@ -2,7 +2,7 @@
 <% provide(:page, "commissions") %>
 
 <div class="wrapper">
-<h4><%= link_to 'Post Something New', controller: :posts, action: :new %></h4>
+<h4><a href="#myModal" data-toggle="modal">Post Somwthing New</a></h4>
 
 
 <br />
@@ -26,4 +26,30 @@
   <div class="page-header"></div>
   <% end %>
 </ul>
+</div>
+
+
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Post Something New</h3>
+  </div>
+  <div class="modal-body">
+    <div style="float:left; width:50%">
+    <%= simple_form_for :post, url: {action: :create} do |f| %>
+    <p>Title</p>
+    <%= f.input :title, label: false, placeholder: 'Title' %>
+    <p>Body</p>
+    <%= f.input :body, :as => :text ,label: false, placeholder: 'Type in the body of the post...', input_html: {cols: 30, rows:5} %>
+    </div>
+    <div style="float: left; width:50%">
+      <br><br><br><br>
+      <p>Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder Placeholder </p>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <%= f.button :submit, "Save", class: 'btn btn-primary btn-default' %>
+    <% end %>
+  </div>
 </div>

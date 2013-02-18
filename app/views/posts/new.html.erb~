@@ -1,8 +1,0 @@
-<% provide(:page, "commissions") %>
-
-
-<%= simple_form_for :post, url: {action: :create} do |f| %>
-<%= f.input :title, label: false, placeholder: "Post Title" %>
-<%= f.input :body, label: false, placeholder: "Type in the post's content..." %>
-<button type="submit" class="btn btn-primary btn-default"><b>Save Post</b></button>
-<% end %>
