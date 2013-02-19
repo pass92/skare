@@ -1,0 +1,5 @@
+class AlterOnlineType < ActiveRecord::Migration
+  def change
+    change_column :users, :online, :integer
+  end
+end

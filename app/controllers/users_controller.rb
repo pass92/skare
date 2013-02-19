@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     @user = current_user
     @user.destroy
     sign_out
-    redirect_to controller: :welcome, action: :index
+    render controller: :welcome, action: :index
   end
 
 end

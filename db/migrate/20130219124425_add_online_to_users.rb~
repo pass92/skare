@@ -1,0 +1,4 @@
+class AddOnlineToUsers < ActiveRecord::Migration
+  def change
+  end
+end

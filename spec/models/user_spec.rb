@@ -9,6 +9,7 @@
 #  updated_at      :datetime         not null
 #  password_digest :string(255)
 #  remember_token  :string(255)
+#  online          :integer
 #
 
 require 'spec_helper'
@@ -26,6 +27,7 @@ describe User do
   it{should respond_to(:password)}
   it{should respond_to(:password_confirmation)}
   it{should respond_to(:remember_token)}
+  it{should respond_to(:online)}
   it{should be_valid}
   
   describe "email not match regex" do

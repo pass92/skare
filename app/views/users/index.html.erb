@@ -5,6 +5,11 @@
   <div class="caption">
     <h3>User : <%= user.username %></h3>
     <p>Email : <%= user.email %></p>
+    <% if user.is_online? %>
+    <p>status : <i class="icon-ok"></i></p>
+    <% else %>
+    <p>status : <i class="icon-remove"></i></p>
+    <% end %>
   </div>
   <hr>
   <% end %>
