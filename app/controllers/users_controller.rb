@@ -22,8 +22,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = current_user
-    @user.destroy
+    current_user.destroy
     sign_out
     render controller: :welcome, action: :index
   end

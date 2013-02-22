@@ -4,11 +4,10 @@ class SessionsController < ApplicationController
   end
   
   def create
-    @user = User.find_by_email(params[:session][:email].downcase)
-    @user.authenticate(params[:session][:password])
-    @user.password = @user.password_confirmation = "scroto"
-    if @user && @user.valid? 
-      @user.update_attributes(:online => true)
+    @user = User.find_by_email(params[:session][:email].downcase) 
+    
+    if @user && @user.authenticate(params[:session][:password])
+      @user.password=@user.password_confirmation = params[:session][:password]
       sign_in @user
       redirect_to controller: :users, action: :show
     else
@@ -18,6 +17,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    @user = self.current_user
+    @user.update_attributes(:online => false) 
     sign_out
     redirect_to root_url
   end
