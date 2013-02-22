@@ -67,6 +67,13 @@
 	<%= link_to '<center><i class="icon-list
 "></i>&nbsp;&nbsp;<b>Commissions</b></center>'.html_safe, controller: :posts, action: :index %>
       </li>
+      <% if yield(:page) == 'users' %>
+      <li class="active">
+	<% else %>
+      <li>
+	<% end %>
+	<%= link_to '<center><i class="icon-user"></i>&nbsp;&nbsp;<b>Users</b></center>'.html_safe, controller: :users, action: :index %>
+      </li>
     </ul>
 </div>
 <% end %>
