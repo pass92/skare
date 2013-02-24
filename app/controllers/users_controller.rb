@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-    @users = User.all
+    @users = User.paginate(:page => params[:page])
   end
 
   def show
@@ -22,9 +22,8 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    sign_out
     current_user.destroy
-    render controller: :welcome, action: :index
+    redirect_to root_url
   end
 
 end
